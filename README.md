@@ -4,4 +4,4 @@ So basically on this app you can create a meal with details such as calories, fa
 
 Also show, edit and delete entities.
 
-Check it out: 
+Check it out: https://foodblog-33.herokuapp.com/ (it actually crashes without any errors :( )
