@@ -1,0 +1,49 @@
+<div class="columns is-centered mt-6">
+	<div class="columm is-half">
+		<% @pentries.each do |day, pentries| %>
+			<h3 class="is-size-4 has-text-weight-bold md-4 has-text-centered">Pentries for <%= day %></h3>
+
+			<nav class="level is-mobile mt-3">
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Calories</p>
+						<p class="title"><%= pentries.pluck(:calories).sum %></p>
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Proteins</p>
+						<p class="title"><%= pentries.pluck(:proteins).sum %>g</p>
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Carbs</p>
+						<p class="title"><%= pentries.pluck(:carbohydrates).sum %>g</p>
+					</div>
+				</div>
+				<div class="level-item has-text-centered">
+					<div>
+						<p class="heading">Fats</p>
+						<p class="title"><%= pentries.pluck(:fats).sum %>g</p>
+					</div>
+				</div>
+			</nav>
+
+			<% pentries.each do |pentry| %>
+				<%= link_to pentry_path(pentry) do %>
+					<div class="card">
+						<div class="card-content">
+							<strong><%= pentry.meal_type %></strong><br>
+							<%= pentry.calories %> g calories,
+							<%= pentry.proteins %> g proteins,
+							<%= pentry.carbohydrates %> g carbs,
+							<%= pentry.fats %> g fats
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+			
+		<% end %>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<section class="hero is-primary is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <header class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+         	<%= link_to root_path, class: "navbar-item" do %>
+         		<img src="https://cdn-icons.flaticon.com/png/512/753/premium/753694.png?token=exp=1634469079~hmac=74c9e6f7ba345217ba57f2badd993e4e" alt=""> 
+         		<span class="has-textweight-bold is-size-4 ml-3">Home</span>
+         	<% end %>
+          <span class="navbar-burger" data-target="navbarMenuHeroC">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroC" class="navbar-menu">
+          <div class="navbar-end">
+
+            <%= link_to "Make new entry", new_pentry_path, class: "button is-success is-inverted mt-2" %>
+				
+			           
+            <a class="navbar-item" href=<%= archive_path %>>
+              All entries
+            </a>
+            
+            
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+      	<% if content_for(:title) %>
+       		<%= yield :title %>
+       	<% else %>
+       		Foodlog
+       	<% end %>
+      </h1>      
+    </div>
+  </div>
+
+ 
+</section>

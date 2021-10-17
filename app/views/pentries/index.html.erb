@@ -1,0 +1,38 @@
+<% content_for :title do %>
+  Foodlog <%= DateTime.now.to_s(:nice_date) %>
+<% end %>
+
+<div class="columns mt-6 is-centered">
+    <% @pentries.each do |pentry| %>
+      <div class="column is-one-quarter">
+        <div class="card">
+          <header class="card-header">
+            <p class="card-header-title"><%= pentry.meal_type %><%= ": #{pentry.category.title}" if pentry.category.present? %></p>
+          </header>
+          <div class="card-content">
+            <div class="content"> 
+              <p><span class="has-text-weight-bold"><%= pentry.calories %></span> calories</p>
+              <p><span class="has-text-weight-bold"><%= pentry.proteins %></span> proteins</p>
+              <p><span class="has-text-weight-bold"><%= pentry.carbohydrates %></span> carbs</p>
+              <p><span class="has-text-weight-bold"><%= pentry.fats %></span> fats</p>
+              <p class="italic">Posted <%= time_ago_in_words(pentry.created_at) %> ago</p>
+            </div>
+          </div>
+         <div class="card-footer">
+           <%= link_to 'Show', pentry, class: "card-footer-item" %>
+           <%= link_to 'Edit', edit_pentry_path(pentry), class: "card-footer-item" %>
+           <%= link_to 'Destroy', pentry, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-footer-item" %>
+         </div>
+        </div>
+      </div>
+    <% end %>
+
+</div>
+<br>
+
+
+
+
+<div class="columns is-centered mt-6">
+  <%= link_to "View all (p)entries", archive_path %>
+</div>
