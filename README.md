@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+So basically on this app you can create a meal with details such as calories, fats, carbs and proteins. Meal has it's own categories(through belong_to and has_many).
 
-Things you may want to cover:
+Also show, edit and delete entities.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Check it out: 
